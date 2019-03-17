@@ -2,8 +2,10 @@
 var a = [0, 1, 2, 3];
 
 
+
 //2 Sum the values of a nested array
 var b = [[1,2], [4,2,1], [9,3], [2]];
+
 
 
 
@@ -12,17 +14,16 @@ var c = [{x: 1}, {x: 2}, {x: 3}]
 
 
 
+
 //4 Sum the values of an Object with unique keys
 var d = [{a: 5}, {b: 8}, {c: 3}]
-
-
 
 
 /* 
 Annotation: 
 */
 
-//5 Count instances of values in an Object
+//5 Count instances of values in an Array
 var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
 
 
@@ -37,6 +38,18 @@ var people = [
   { name: 'Max', age: 20 },
   { name: 'Jane', age: 20 }
 ];
+
+/*
+ {
+  20: [
+        { name: 'Max', age: 20 }, 
+        { name: 'Jane', age: 20 }
+      ],
+  21: [
+        { name: 'Alice', age: 21 }
+      ]
+ }
+*/
 
 
 

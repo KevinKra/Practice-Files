@@ -1,3 +1,5 @@
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
 //1 Sum the values of an array
 var a = [0, 1, 2, 3];
 
@@ -20,6 +22,19 @@ let totalSum = flatten.reduce( (total, number) => {
 }, 0);
 
 totalSum;
+
+//or
+
+let totalSum = b.
+reduce( (accum, curr) => {
+	return [...accum, ...curr]
+}, []).
+reduce( (accum, curr) => {
+	return accum + curr;
+}, 0)
+
+
+
 
 //3 Sum the values of an Object with identical keys
 var c = [{x: 1}, {x: 2}, {x: 3}]
@@ -44,7 +59,7 @@ on the Object's output array turns every element we work through into an integer
 passing adding it to the total.
 */
 
-//5 Count instances of values in an Object
+//5 Count instances of values in an Array
 var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
 
 let countedNames = names.reduce( (accum, curr) => {
@@ -70,6 +85,18 @@ var people = [
   { name: 'Max', age: 20 },
   { name: 'Jane', age: 20 }
 ];
+
+/*
+ {
+ 	20: [
+ 				{ name: 'Max', age: 20 }, 
+ 				{ name: 'Jane', age: 20 }
+ 			],
+ 	21: [
+				{ name: 'Alice', age: 21 }
+ 			]
+ }
+*/
 
 function sortBy(objectArray, property) {
 	return objectArray.reduce( (total, current) => {
@@ -149,22 +176,20 @@ myArr.map(double);
 var myArr = [1,2,3,4,5];
 
 function isOdd(v) { return v % 2 == 1;}
+function isEven(num) { return num % 2 == 0 };
 
-function exclude(arr, fn) {
-	let list = [];
-	for (let i = 0; i < arr.length; i++) {
-		if (fn(arr[i])) {
-			list.push(arr[i])l
+function exclude(array, fn) {
+	return array.reduce( (acc, curr) => {
+		if (fn(curr)) {
+			acc.push(curr)
 		}
-	}
-	return list;
+		return acc;	
+	}, [])
 }
 
 exclude(myArr, isOdd);
 
-// w filter
 
-myArr.filter(isOdd);
 
 
 
@@ -174,9 +199,12 @@ function acronym(str, word) {
 	return str + word.charAt(0)
 }
 
-words.reduce(acronym(), '');
+words.reduce(acronym, '');
 
-
+//or
+words.map( element => {
+	return element.charAt(0).toUpperCase();
+})
 
 
 
