@@ -168,7 +168,7 @@ myArr.filter(isOdd);
 
 
 
-//10 create an acronym of n strings in an array
+//11 create an acronym of n strings in an array
 let words = ['Functional', 'Light', 'JavaScript', 'stuff'];
 function acronym(str, word) {
 	return str + word.charAt(0)
